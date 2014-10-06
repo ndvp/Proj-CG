@@ -24,6 +24,25 @@ void keyHandler(unsigned char key, int x, int y){
 	}
 }
 
+void keyUp(unsigned char key, int x, int y){
+	switch (key){
+
+	case 'o':
+	case 'O': game->setState(STOP); break;
+
+	case 'p':
+	case 'P': game->setState(STOP); break;
+
+	case 'q':
+	case 'Q': game->setState(STOP); break;
+
+	case 'a':
+	case 'A': game->setState(STOP); break;
+
+	default: game->setState(STOP); break;
+	}
+}
+
 void myTimer(int ms)
 {
 	game->update(glutGet(GLUT_ELAPSED_TIME) - game->getOldTime());
@@ -83,6 +102,7 @@ int main(int argc, char *argv[])
 	glutReshapeFunc(myReshape);
 
 	glutKeyboardFunc(keyHandler);
+	glutKeyboardUpFunc(keyUp);
 	glutTimerFunc(30, myTimer, 30);              // ~33 FPS
 
 
