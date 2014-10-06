@@ -16,6 +16,7 @@
 #define DOWN 1
 #define LEFT 2
 #define RIGHT 3
+#define STOP 4
 
 class GameObject : public Entity{
 public:
@@ -78,7 +79,6 @@ class Frog : public DynamicObject{
 	void drawBackLeftLeg();
 	void drawFrontLegs();
 	void draw();
-	void update();
 
 public:
 	Frog();

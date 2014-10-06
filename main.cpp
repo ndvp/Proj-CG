@@ -19,6 +19,8 @@ void keyHandler(unsigned char key, int x, int y){
 
 		case 'a':
 		case 'A': game->setState(DOWN); break;
+
+		default: game->setState(STOP); break;
 	}
 }
 

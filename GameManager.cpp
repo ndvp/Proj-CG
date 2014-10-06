@@ -50,8 +50,12 @@ void GameManager::update(double delta_t){
 		case DOWN:
 			_frog->setSpeed(0, -SPEED, 0);
 			break;
+		case STOP:
+			_frog->setSpeed(0, 0, 0);
+			break;
 	}
 	for each (GameObject *g in _game_objects){
 		g->update(delta_t);
 	}
+	std::cout << "(" << _frog->getPosition()->getX() << ", " << _frog->getPosition()->getY() << ", " << _frog->getPosition()->getZ() << ")\n";
 }

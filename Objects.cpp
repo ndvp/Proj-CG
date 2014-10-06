@@ -91,9 +91,6 @@ void Frog::drawFrontLegs()
 
 }
 
-void Frog::update(){
-}
-
 void River::draw(){
 	glPushMatrix();
 	glColor3f(0.0, 0.0, 1.0);
