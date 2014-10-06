@@ -37,6 +37,7 @@ void GameManager::setState(int state){
 }
 
 void GameManager::update(double delta_t){
+	int actTime = glutGet(GLUT_ELAPSED_TIME);
 	switch (int state = getState()){
 		case LEFT:
 			_frog->setSpeed(-SPEED, 0, 0);
@@ -54,8 +55,15 @@ void GameManager::update(double delta_t){
 			_frog->setSpeed(0, 0, 0);
 			break;
 	}
+
+	std::cout << "FrogPos: (" << _frog->getPosition()->getX() << ", " << _frog->getPosition()->getY() << ", " << _frog->getPosition()->getZ() << ")\n";
+
 	for each (GameObject *g in _game_objects){
 		g->update(delta_t);
+		_oldTime = actTime;
 	}
-	std::cout << "(" << _frog->getPosition()->getX() << ", " << _frog->getPosition()->getY() << ", " << _frog->getPosition()->getZ() << ")\n";
+}
+
+double GameManager::getOldTime(){
+	return _oldTime;
 }

@@ -8,7 +8,7 @@
 #ifndef _OBJECTS_H
 #define _OBJECTS_H
 
-#define SPEED 0.2
+#define SPEED 0.005
 #define SapoX 0.0
 #define SapoY -7.0
 #define SapoZ 1.0
@@ -20,7 +20,6 @@
 
 class GameObject : public Entity{
 public:
-	char id;
 	virtual void draw(){}
 	virtual void update(double delta_t){};
 };

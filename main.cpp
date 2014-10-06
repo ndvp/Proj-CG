@@ -26,7 +26,7 @@ void keyHandler(unsigned char key, int x, int y){
 
 void myTimer(int ms)
 {
-	game->update(ms);
+	game->update(glutGet(GLUT_ELAPSED_TIME) - game->getOldTime());
 	glutPostRedisplay();
 	glutTimerFunc(ms, myTimer, ms);
 }

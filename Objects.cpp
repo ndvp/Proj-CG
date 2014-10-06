@@ -14,6 +14,7 @@ void DynamicObject::update(double delta_t){
 
 Frog::Frog(){
 	_position.set(SapoX, SapoY, SapoZ);
+	_speed.set(0.0, 0.0, 0.0);
 }
 
 void Frog::draw()

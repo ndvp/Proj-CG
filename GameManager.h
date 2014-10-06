@@ -22,6 +22,7 @@ class GameManager{
 		std::deque<Camera*> _cameras;
 		int _state;
 		Frog* _frog;
+		double _oldTime;
 	public:
 		void display();
 		void reshape(GLsizei w, GLsizei h);
@@ -35,6 +36,7 @@ class GameManager{
 		void addCamera(Camera *c);
 		int getState();
 		void setState(int i);
+		double getOldTime();
 };
 
 #endif
