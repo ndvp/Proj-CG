@@ -19,7 +19,9 @@ void GameManager::addCamera(Camera *c){
 
 void GameManager::init(){
 	_frog = new Frog();
+	addObject(new Car());
 	addObject(_frog);
+	addObject(new TimberLog());
 	addObject(new Riverside());
 	addObject(new Roadside());
 	addObject(new River());
