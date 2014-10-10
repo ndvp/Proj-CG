@@ -25,22 +25,7 @@ void keyHandler(unsigned char key, int x, int y){
 }
 
 void keyUp(unsigned char key, int x, int y){
-	switch (key){
-
-	case 'o':
-	case 'O': game->setState(STOP); break;
-
-	case 'p':
-	case 'P': game->setState(STOP); break;
-
-	case 'q':
-	case 'Q': game->setState(STOP); break;
-
-	case 'a':
-	case 'A': game->setState(STOP); break;
-
-	default: game->setState(STOP); break;
-	}
+	game->setState(STOP);
 }
 
 void myTimer(int ms)
