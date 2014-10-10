@@ -12,6 +12,49 @@ void DynamicObject::update(double delta_t){
 	setPosition(_position + _speed*delta_t);
 }
 
+void Car::draw(){
+	glPushMatrix();
+
+	glColor3f(255, 0, 255);
+
+	glScalef(0.2, 0.2, 0.2);
+	glTranslatef(0, -9, 2);
+
+	glPushMatrix();
+	glTranslatef(0, 0, -1);
+	glScalef(3, 2, 0.5);
+	glutSolidCube(3);
+
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(255, 255, 0);
+	glScalef(2, 2, 1);
+	glutSolidCube(3);
+	glPopMatrix();
+
+	glPushMatrix();
+
+	glColor3f(0, 0, 0);
+
+	glTranslatef(3, 3, -1.5);
+	glRotatef(90, 1, 0, 0);
+	glScalef(0.5, 0.5, 0.5);
+	glutSolidTorus(0.5, 1, 10, 10);
+
+	glTranslatef(0, 0, 12);
+	glutSolidTorus(0.5, 1, 10, 10);
+
+	glTranslatef(-12, 0, 0);
+	glutSolidTorus(0.5, 1, 10, 10);
+
+	glTranslatef(0, 0, -12);
+	glutSolidTorus(0.5, 1, 10, 10);
+
+	glPopMatrix();
+	glPopMatrix();
+}
+
 Frog::Frog(){
 	_position.set(SapoX, SapoY, SapoZ);
 	_speed.set(0.0, 0.0, 0.0);
